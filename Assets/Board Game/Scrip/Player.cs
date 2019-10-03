@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     // MakePath Players = new MakePath();
 
     public MakePath framMakePath;
+    public int ID_Player;
     public int Box_n ,num =5,numset;
 
     public bool Player_turn,playerRun;
@@ -42,18 +43,17 @@ public class Player : MonoBehaviour
                 break;
             } 
     }
-
     public void run() {
-        if(transform.position != framMakePath.point[Box_n].position )  // != ให้เข้าหา
+        if(transform.position != framMakePath.Checkbox[Box_n].point_Box.position )  // != ให้เข้าหา
             {
                 // Vector2 poit = Vector2.MoveTowards(transform.position,point[n].position,Space*Time.deltaTime);
                 // rb.MovePosition(poit);
-                Vector2 poit = Vector2.MoveTowards(transform.position,framMakePath.point[Box_n].position,framMakePath.Space*Time.deltaTime);
+                Vector2 poit = Vector2.MoveTowards(transform.position,framMakePath.Checkbox[Box_n].point_Box.position,framMakePath.Space*Time.deltaTime);
                 rb.MovePosition(poit);
             }
         else
             {   
-                Box_n = (Box_n + 1) % framMakePath.point.Length;   
+                Box_n = (Box_n + 1) % framMakePath.Checkbox.Count;   
                 if(num-1 > 0){         // นับจุดผ่าน
                     num -= 1 ;
                     int i ;
@@ -67,4 +67,38 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        public void testProgram(int _id){
+            // framMakePath.test_CheckData_Box(_id);
+            // framMakePath.test_CheckData_Box(_id);
+            framMakePath.CheckData_Box(_id);
+        }
 }
+
+
+
+//******************************************************/
+// public void run() {
+    //     if(transform.position != framMakePath.point[Box_n].position )  // != ให้เข้าหา
+    //         {
+    //             // Vector2 poit = Vector2.MoveTowards(transform.position,point[n].position,Space*Time.deltaTime);
+    //             // rb.MovePosition(poit);
+    //             Vector2 poit = Vector2.MoveTowards(transform.position,framMakePath.point[Box_n].position,framMakePath.Space*Time.deltaTime);
+    //             rb.MovePosition(poit);
+    //         }
+    //     else
+    //         {   
+    //             Box_n = (Box_n + 1) % framMakePath.point.Length;   
+    //             if(num-1 > 0){         // นับจุดผ่าน
+    //                 num -= 1 ;
+    //                 int i ;
+    //                 i =+ 1;
+    //                 Debug.Log("i="+i);
+    //         }
+    //             else
+    //             {
+    //                 playerRun = false;
+    //                 num = numset;
+    //             }
+    //         }
+    //     }

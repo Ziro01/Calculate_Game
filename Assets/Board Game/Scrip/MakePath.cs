@@ -9,16 +9,20 @@ public class MakePath : MonoBehaviour
     // Start is called before the first frame update
     // public static MakePath  fromMakePath;
     public Transform[] point;
+
+    public int HP;  //พลังชีวิต
+
+    public int box_i;
     
     [System.Serializable]
-    public class ttt{
-        public Transform point;
+    public class DataBox{
+        public Transform point_Box;
         public int Owner_p1;
         public int Owner_p2;
         public int Owner_p3;
         public int Owner_p4;
     }
-    public List <ttt> list_P = new List <ttt>();
+    public List <DataBox> Checkbox = new List <DataBox>();
     public float Space;
     // public Vector2 poit;
     public  int n ,num,numset;
@@ -38,6 +42,140 @@ public class MakePath : MonoBehaviour
         // num = numset;
         // play = true;
     }
+    
+     public void test(){
+         Debug.Log("connect MakePath");
+     }
+
+    public void test_CheckData_Box(int _num){
+        box_i = _num;
+      
+        // int Datap1 = Checkbox[box_i].Owner_p1;
+        // int Datap2 = Checkbox[box_i].Owner_p2;
+        // int Datap3 = Checkbox[box_i].Owner_p3;
+        // int Datap4 = Checkbox[box_i].Owner_p4;
+
+        Debug.Log("Datap1="+Checkbox[box_i].Owner_p1);
+        Debug.Log("Datap2="+Checkbox[box_i].Owner_p2);
+        Debug.Log("Datap3="+Checkbox[box_i].Owner_p3);
+        Debug.Log("Datap4="+Checkbox[box_i].Owner_p4);
+
+    }
+
+    public void CheckData_Box(int id_player){   //เช็คข้อมูลในกล่อง
+        switch(id_player){
+            case 1:
+                if(Checkbox[box_i].Owner_p2 > 0){
+                    Checkbox[box_i].Owner_p2 -=1;
+                }
+                else if (Checkbox[box_i].Owner_p3 > 0){
+                    Checkbox[box_i].Owner_p3 -=1;
+                } 
+                else if (Checkbox[box_i].Owner_p4 > 0){
+                    Checkbox[box_i].Owner_p4 -=1;
+                }
+                else{
+                    if(Checkbox[box_i].Owner_p1 < 3) {
+                        Checkbox[box_i].Owner_p1 +=1;
+                    }
+                }
+            break;//end
+
+            case 2:
+                    if(Checkbox[box_i].Owner_p1 > 0){
+                    Checkbox[box_i].Owner_p1 -=1;
+                }
+                else if (Checkbox[box_i].Owner_p3 > 0){
+                    Checkbox[box_i].Owner_p3 -=1;
+                } 
+                else if (Checkbox[box_i].Owner_p4 > 0){
+                    Checkbox[box_i].Owner_p4 -=1; 
+                }
+                else{
+                    if(Checkbox[box_i].Owner_p2 < 3){
+                    Checkbox[box_i].Owner_p2 +=1;            
+                    }
+                }
+            break;//end
+
+            case 3:
+                if(Checkbox[box_i].Owner_p1 > 0){
+                    Checkbox[box_i].Owner_p1 -=1;
+                }
+                else if (Checkbox[box_i].Owner_p2 > 0){
+                    Checkbox[box_i].Owner_p2 -=1;
+                } 
+                else if (Checkbox[box_i].Owner_p4 > 0){
+                    Checkbox[box_i].Owner_p4 -=1;  
+                }
+                else{
+                    if(Checkbox[box_i].Owner_p3 < 3){
+                        Checkbox[box_i].Owner_p3 +=1;
+                    }
+                }
+            break;//end
+
+            case 4:
+            if(Checkbox[box_i].Owner_p1 > 0){
+                    Checkbox[box_i].Owner_p1 -=1;
+                }
+                else if (Checkbox[box_i].Owner_p2 > 0){
+                    Checkbox[box_i].Owner_p2 -=1;
+                } 
+                else if (Checkbox[box_i].Owner_p3 > 0){
+                    Checkbox[box_i].Owner_p3 -=1;
+                }
+                else{
+                    
+                    if(Checkbox[box_i].Owner_p4 < 3){
+                        Checkbox[box_i].Owner_p4 +=1;
+                    }
+                }
+            break; //end
+
+        }
+            // int Datap1 = Checkbox[box_i].Owner_p1;
+            // int Datap2 = Checkbox[box_i].Owner_p2;
+            // int Datap3 = Checkbox[box_i].Owner_p3;
+            // int Datap4 = Checkbox[box_i].Owner_p4;
+
+            // Debug.Log("Datap1="+Datap1);
+            // Debug.Log("Datap2="+Datap2);
+            // Debug.Log("Datap3="+Datap3);
+            // Debug.Log("Datap4="+Datap4);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Update is called once per frame
     // void Update() { }

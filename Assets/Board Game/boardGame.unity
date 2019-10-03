@@ -1339,7 +1339,7 @@ GameObject:
   - component: {fileID: 307290340}
   - component: {fileID: 307290342}
   m_Layer: 0
-  m_Name: point
+  m_Name: point (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2484,6 +2484,7 @@ GameObject:
   - component: {fileID: 740091125}
   - component: {fileID: 740091129}
   - component: {fileID: 740091124}
+  - component: {fileID: 740091126}
   m_Layer: 0
   m_Name: player_01
   m_TagString: Untagged
@@ -2528,6 +2529,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.03
+--- !u!114 &740091126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740091123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca9af30a87ad8d41b5d368ac9377c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  framMakePath: {fileID: 1202191030}
+  ID_Player: 0
+  Box_n: 0
+  num: 5
+  numset: 0
+  Player_turn: 0
+  playerRun: 0
 --- !u!212 &740091127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2597,7 +2617,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740091123}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6dfd247d6b4f5a4aa3aa40c2545263a, type: 3}
   m_Name: 
@@ -2619,6 +2639,9 @@ MonoBehaviour:
   - {fileID: 186288691}
   - {fileID: 406355043}
   - {fileID: 275096069}
+  HP: 0
+  box_i: 0
+  Checkbox: []
   Space: 0.5
   n: 0
   num: 0
@@ -2732,7 +2755,6 @@ GameObject:
   - component: {fileID: 877103309}
   - component: {fileID: 877103308}
   - component: {fileID: 877103307}
-  - component: {fileID: 877103306}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2760,18 +2782,6 @@ RectTransform:
   m_AnchoredPosition: {x: -10, y: -8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &877103306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877103304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6b2ff89db798874ca3bffceee3e011c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &877103307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2812,13 +2822,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 877103306}
-        m_MethodName: contoler
-        m_Mode: 3
+      - m_Target: {fileID: 740091126}
+        m_MethodName: playGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+      - m_Target: {fileID: 1202191030}
+        m_MethodName: test_CheckData_Box
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3654,6 +3675,8 @@ GameObject:
   - component: {fileID: 1202191026}
   - component: {fileID: 1202191028}
   - component: {fileID: 1202191029}
+  - component: {fileID: 1202191030}
+  - component: {fileID: 1202191031}
   m_Layer: 0
   m_Name: __script__
   m_TagString: Untagged
@@ -3712,16 +3735,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202191025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c337ee142d03446a25792b493eb6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playereing: 0
   play: 0
-  player:
-  - {fileID: 740091129}
-  - {fileID: 1544997799}
+  player: []
+  framMakePath: {fileID: 1202191030}
 --- !u!114 &1202191029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3729,11 +3751,161 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202191025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ca9af30a87ad8d41b5d368ac9377c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  framMakePath: {fileID: 0}
+  ID_Player: 0
+  Box_n: 0
+  num: 5
+  numset: 0
+  Player_turn: 0
+  playerRun: 0
+--- !u!114 &1202191030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202191025}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6dfd247d6b4f5a4aa3aa40c2545263a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point:
+  - {fileID: 307290341}
+  - {fileID: 846990581}
+  - {fileID: 554072314}
+  - {fileID: 196700127}
+  - {fileID: 302580310}
+  - {fileID: 592473285}
+  - {fileID: 1135166098}
+  - {fileID: 1598727767}
+  - {fileID: 1400651226}
+  - {fileID: 1070835490}
+  - {fileID: 1114656633}
+  - {fileID: 480972508}
+  - {fileID: 1720961332}
+  - {fileID: 186288691}
+  - {fileID: 406355043}
+  - {fileID: 275096069}
+  HP: 0
+  box_i: 4
+  Checkbox:
+  - point_Box: {fileID: 307290341}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 846990581}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 554072314}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 196700127}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 302580310}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 592473285}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 1135166098}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 1598727767}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 1400651226}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 1070835490}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 1114656633}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 480972508}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 1720961332}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 186288691}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 406355043}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  - point_Box: {fileID: 275096069}
+    Owner_p1: 0
+    Owner_p2: 0
+    Owner_p3: 0
+    Owner_p4: 0
+  Space: 0.3
+  n: 0
+  num: 0
+  numset: 4
+  play: 0
+--- !u!114 &1202191031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202191025}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d11aa265359fb47a0742ba822ff536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  series_Skin:
+  - skin_Cha: {fileID: 0}
+    skin_channel: {fileID: 0}
+  - skin_Cha: {fileID: 0}
+    skin_channel: {fileID: 0}
+  series_Character:
+  - Charater: {fileID: 0}
+    channel: {fileID: 0}
+  - Charater: {fileID: 0}
+    channel: {fileID: 0}
+  player01: 0
+  player02: 0
+  player03: 0
+  player04: 0
 --- !u!1 &1210502982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,7 +4981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &1544997798
 Rigidbody2D:
   serializedVersion: 4
@@ -4838,7 +5010,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544997796}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6dfd247d6b4f5a4aa3aa40c2545263a, type: 3}
   m_Name: 
@@ -4860,6 +5032,9 @@ MonoBehaviour:
   - {fileID: 186288691}
   - {fileID: 406355043}
   - {fileID: 275096069}
+  HP: 0
+  box_i: 0
+  Checkbox: []
   Space: 0.5
   n: 4
   num: 0
@@ -4919,7 +5094,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 1, b: 0.3299973, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.0094127655, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4937,7 +5112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544997796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.858, y: -0.746, z: 0}
+  m_LocalPosition: {x: 0.04, y: -0.486, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

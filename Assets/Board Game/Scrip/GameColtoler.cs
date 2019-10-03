@@ -29,4 +29,8 @@ public class GameColtoler : MonoBehaviour
         }
 
     }
+    // static int num(){
+    //     int n;
+    //     n = Random.r
+    // }
 }

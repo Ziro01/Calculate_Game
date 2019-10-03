@@ -40,10 +40,10 @@ public class Setting_btn : MonoBehaviour {
 		// txt_Total.text = numTotal.ToString();
 	}
 	public void calculate_num(){   //ตั้งคำถาม
-        numC_1 = number_Question(min,max);
-		numC_2 = number_Question(min,max);
-		numC_3 = number_Question(min,max);
-		numC_4 = number_Question(min,max);
+        // numC_1 = number_Question(min,max);
+		// numC_2 = number_Question(min,max);
+		// numC_3 = number_Question(min,max);
+		// numC_4 = number_Question(min,max);
 		// Debug.Log(numTotal +" +"+ numC_1 +" +"+ numC_2 +" +"+ numC_3 +" +"+ numC_4);
 		numTotal = numC_1 + numC_2 + numC_3 + numC_4;
 
@@ -70,10 +70,10 @@ public class Setting_btn : MonoBehaviour {
 		}
 	}
 
-	static int number_Question(int _min,int _max){   //สุ่มเลข
-		int number;
-		number = Random.Range(_min,_max);
+	// static int number_Question(int _min,int _max){   //สุ่มเลข
+	// 	int number;
+	// 	// number = Random.Range(_min,_max);
 		
-		return number;
-	}
+	// 	return number;
+	// }
 }
