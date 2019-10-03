@@ -11,12 +11,10 @@ public class GameColtoler : MonoBehaviour
     public bool play;
     // Start is called before the first frame update
     public  List<MakePath>  player = new List<MakePath>();
+    public MakePath framMakePath;
     void Start()
     {
-        player[playereing].testP1(1111);
-
-        player[playereing].testP1(22222);
-        
+        // Debug.Log("MakePath[] = "+framMakePath.point.Length);
     }
 
     // Update is called once per frame
