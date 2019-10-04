@@ -6,31 +6,23 @@ using UnityEngine.UI;
 //managrt gamecontoler//
 public class GameColtoler : MonoBehaviour
 {    
-    // Randomnumber Randoms = new Randomnumber();
-    public int playereing;
-    public bool play;
-    // Start is called before the first frame update
-    public  List<MakePath>  player = new List<MakePath>();
-    public MakePath framMakePath;
-    void Start()
-    {
-        // Debug.Log("MakePath[] = "+framMakePath.point.Length);
+    public int playering;
+    public  List<Player>  player = new List<Player>();
+    public RandomDice Dice;
+    public void playGame(){
+        player[playering].playGame();
+        run_turn();
     }
+    public void run_turn(){
+        playering = (playering + 1) % player.Count;
+    }  
+}
+public class _Dice : RandomDice 
+{    
+    public RandomDice  _random = new RandomDice();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void terbPlate(){
-        if(play == true){
-            
 
-        }
+    // public void 
 
-    }
-    // static int num(){
-    //     int n;
-    //     n = Random.r
-    // }
+
 }

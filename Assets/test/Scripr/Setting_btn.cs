@@ -12,7 +12,7 @@ public class Setting_btn : MonoBehaviour {
     public int num_1,num_2,num_3,num_4;
 	// [Space(15)]
 	public int min,max;
-	private int numC_1,numC_2,numC_3,numC_4;
+	// private int numC_1,numC_2,numC_3,numC_4;
 	private int  numTotal ,num_Answer ,numconut;
 	// Use this for initialization
 
@@ -45,7 +45,7 @@ public class Setting_btn : MonoBehaviour {
 		// numC_3 = number_Question(min,max);
 		// numC_4 = number_Question(min,max);
 		// Debug.Log(numTotal +" +"+ numC_1 +" +"+ numC_2 +" +"+ numC_3 +" +"+ numC_4);
-		numTotal = numC_1 + numC_2 + numC_3 + numC_4;
+		// numTotal = numC_1 + numC_2 + numC_3 + numC_4;
 
 		txt_Total.text = numTotal.ToString();
 	}
