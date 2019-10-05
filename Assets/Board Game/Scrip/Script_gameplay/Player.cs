@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
         public MakePath framMakePath;
         [Tooltip(" ID player ")]public int ID_Player ,hp ;
         public int Box_n ,Box_i ;
-        private int num ;
-        public bool playerRun;
+        private int num;
+        public bool playerRun ,live;
         private Rigidbody2D rb;
     void Start()
     { 
@@ -37,6 +37,14 @@ public class Player : MonoBehaviour
                 default :
                 break;
             } 
+
+
+        if(hp >0){
+            live = true;
+        }
+        else{
+            live = false;
+        }
     }
     public void run() 
     {
