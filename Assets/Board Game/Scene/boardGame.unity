@@ -481,8 +481,8 @@ MonoBehaviour:
   framMakePath: {fileID: 1202191030}
   ID_Player: 4
   hp: 0
-  Box_n: 12
-  Box_i: 0
+  point_n: 0
+  point_i: 0
   playerRun: 0
   live: 0
 --- !u!50 &72908072
@@ -521,6 +521,7 @@ MonoBehaviour:
   HP: 0
   box_i: 0
   Checkbox: []
+  Check_tokenBox: []
   Space: 0.5
   n: 4
   num: 0
@@ -598,7 +599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72908070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.77, y: 0.781, z: 0}
+  m_LocalPosition: {x: -0.77, y: 0.781, z: 13.027148}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1846,6 +1847,7 @@ GameObject:
   - component: {fileID: 247944564}
   - component: {fileID: 247944563}
   - component: {fileID: 247944562}
+  - component: {fileID: 247944565}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1911,12 +1913,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247944561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247944565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247944561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2413fe8f8d09944d81f801e43b607b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &264377567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,9 +2781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14a6afad17b5bb49a18a7ae43baa338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  play: 0
-  count: 0
-  setcout: 10
+  framMakePath: {fileID: 0}
+  point_n: 0
+  point_i: 0
+  playerRun: 0
 --- !u!50 &386800606
 Rigidbody2D:
   serializedVersion: 4
@@ -4330,13 +4345,14 @@ GameObject:
   - component: {fileID: 740091129}
   - component: {fileID: 740091124}
   - component: {fileID: 740091126}
+  - component: {fileID: 740091130}
   m_Layer: 0
   m_Name: player_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &740091124
 Rigidbody2D:
   serializedVersion: 4
@@ -4357,7 +4373,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &740091125
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4381,7 +4397,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740091123}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ca9af30a87ad8d41b5d368ac9377c30, type: 3}
   m_Name: 
@@ -4389,8 +4405,8 @@ MonoBehaviour:
   framMakePath: {fileID: 1202191030}
   ID_Player: 1
   hp: 0
-  Box_n: 0
-  Box_i: 0
+  point_n: 0
+  point_i: 0
   playerRun: 0
   live: 0
 --- !u!212 &740091127
@@ -4449,8 +4465,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740091123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.858, y: 0.744, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0.825, y: 0.777, z: 0.02714844}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -4470,11 +4486,28 @@ MonoBehaviour:
   HP: 0
   box_i: 0
   Checkbox: []
+  Check_tokenBox: []
   Space: 0.5
   n: 0
   num: 0
   numset: 4
   play: 0
+--- !u!114 &740091130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740091123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14a6afad17b5bb49a18a7ae43baa338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  framMakePath: {fileID: 1202191030}
+  point_n: 1
+  point_i: 0
+  playerRun: 0
 --- !u!1 &773372367
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,7 +5326,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &980625488
 GameObject:
@@ -5398,7 +5431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008830276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.481, y: 0.050750025, z: -0.027148437}
+  m_LocalPosition: {x: -0.481, y: 0.050750025, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 307290341}
@@ -5418,7 +5451,7 @@ Transform:
   - {fileID: 406355043}
   - {fileID: 275096069}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062874822
 GameObject:
@@ -6052,7 +6085,7 @@ Transform:
   m_Children:
   - {fileID: 621102498}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1202191028
 MonoBehaviour:
@@ -6066,13 +6099,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c337ee142d03446a25792b493eb6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playering: 0
   player:
   - {fileID: 740091126}
   - {fileID: 1544997797}
   - {fileID: 2076706169}
   - {fileID: 72908071}
-  Dice: {fileID: 0}
+  series_Skin: []
+  series_Character: []
+  playering: 0
+  playrtNumber: 0
+  Color_P1: 0
+  Color_P2: 0
+  Color_P3: 0
+  Color_P4: 0
 --- !u!114 &1202191029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6088,8 +6127,8 @@ MonoBehaviour:
   framMakePath: {fileID: 0}
   ID_Player: 0
   hp: 0
-  Box_n: 0
-  Box_i: 0
+  point_n: 0
+  point_i: 0
   playerRun: 0
   live: 0
 --- !u!114 &1202191030
@@ -6108,85 +6147,102 @@ MonoBehaviour:
   box_i: 4
   Checkbox:
   - point_Box: {fileID: 307290341}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 846990581}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 554072314}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 196700127}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 302580310}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 592473285}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 1135166098}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 1598727767}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 1400651226}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 1070835490}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 1114656633}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 480972508}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 1720961332}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 186288691}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 406355043}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
   - point_Box: {fileID: 275096069}
+    token: {fileID: 0}
     Owner_p1: 0
     Owner_p2: 0
     Owner_p3: 0
     Owner_p4: 0
+  Check_tokenBox: []
   Space: 0.3
   n: 0
   num: 0
@@ -6214,6 +6270,7 @@ MonoBehaviour:
     channel: {fileID: 0}
   - Charater: {fileID: 0}
     channel: {fileID: 0}
+  Playernumder: 0
   player01: 0
   player02: 0
   player03: 0
@@ -6231,8 +6288,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Checkbox: []
+  Check_ScrorBox: []
   player_id: 0
   Box_id: 0
+  color_id: 0
 --- !u!1 &1210502982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7960,8 +8019,8 @@ MonoBehaviour:
   framMakePath: {fileID: 1202191030}
   ID_Player: 2
   hp: 0
-  Box_n: 4
-  Box_i: 0
+  point_n: 0
+  point_i: 0
   playerRun: 0
   live: 0
 --- !u!50 &1544997798
@@ -8000,6 +8059,7 @@ MonoBehaviour:
   HP: 0
   box_i: 0
   Checkbox: []
+  Check_tokenBox: []
   Space: 0.5
   n: 4
   num: 0
@@ -8077,7 +8137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544997796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.868, y: -0.74, z: 0}
+  m_LocalPosition: {x: 0.868, y: -0.74, z: 13.027148}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8353,7 +8413,7 @@ GameObject:
   - component: {fileID: 1669913571}
   - component: {fileID: 1669913570}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8388,10 +8448,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8432,7 +8492,7 @@ RectTransform:
   m_Children:
   - {fileID: 877103305}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9957,8 +10017,8 @@ MonoBehaviour:
   framMakePath: {fileID: 1202191030}
   ID_Player: 3
   hp: 0
-  Box_n: 8
-  Box_i: 0
+  point_n: 0
+  point_i: 0
   playerRun: 0
   live: 0
 --- !u!50 &2076706170
@@ -9997,6 +10057,7 @@ MonoBehaviour:
   HP: 0
   box_i: 0
   Checkbox: []
+  Check_tokenBox: []
   Space: 0.5
   n: 4
   num: 0
@@ -10074,7 +10135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076706168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.793, y: -0.746, z: 0}
+  m_LocalPosition: {x: -0.793, y: -0.746, z: 13.027148}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

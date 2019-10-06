@@ -2,19 +2,19 @@ fileFormatVersion: 2
 guid: 5aa0a10b73b7d01498fb3e459d06fc45
 TextureImporter:
   fileIDToRecycleName:
-    21300000: IMG_0455_0
-    21300002: IMG_0455_1
-    21300004: IMG_0455_2
-    21300006: IMG_0455_3
-    21300008: IMG_0455_4
-    21300010: IMG_0455_5
-    21300012: IMG_0455_6
-    21300014: IMG_0455_7
-    21300016: IMG_0455_8
-    21300018: IMG_0455_9
-    21300020: IMG_0455_10
-    21300022: IMG_0455_11
-    21300024: IMG_0455_12
+    21300000: btn_2
+    21300002: btn_4
+    21300004: channel_0
+    21300006: channel_2
+    21300008: channel_3
+    21300010: btn_1
+    21300012: btn_3
+    21300014: channel_1
+    21300016: channel_4
+    21300018: character_1
+    21300020: character_2
+    21300022: character_3
+    21300024: character_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -119,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0455_0
+      name: btn_2
       rect:
         serializedVersion: 2
         x: 100
@@ -127,7 +127,7 @@ TextureImporter:
         width: 296
         height: 260
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_1
+      name: btn_4
       rect:
         serializedVersion: 2
         x: 445
@@ -147,7 +147,7 @@ TextureImporter:
         width: 297
         height: 260
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,15 +159,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_2
+      name: channel_0
       rect:
         serializedVersion: 2
         x: 866
         y: 485
         width: 420
         height: 421
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,15 +179,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_3
+      name: channel_2
       rect:
         serializedVersion: 2
         x: 1380
         y: 484
         width: 420
         height: 420
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,15 +199,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_4
+      name: channel_3
       rect:
         serializedVersion: 2
         x: 1907
         y: 502
         width: 422
         height: 422
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -219,7 +219,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_5
+      name: btn_1
       rect:
         serializedVersion: 2
         x: 99
@@ -227,7 +227,7 @@ TextureImporter:
         width: 296
         height: 259
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,7 +239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_6
+      name: btn_3
       rect:
         serializedVersion: 2
         x: 444
@@ -247,7 +247,7 @@ TextureImporter:
         width: 295
         height: 260
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,15 +259,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_7
+      name: channel_1
       rect:
         serializedVersion: 2
         x: 1456
         y: 27
         width: 418
         height: 419
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -279,15 +279,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_8
+      name: channel_4
       rect:
         serializedVersion: 2
         x: 1924
         y: 23
         width: 421
         height: 422
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.23}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,15 +299,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_9
+      name: character_1
       rect:
         serializedVersion: 2
         x: 92
         y: 50
         width: 302
         height: 284
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -319,15 +319,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_10
+      name: character_2
       rect:
         serializedVersion: 2
         x: 419
         y: 51
         width: 300
         height: 282
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -339,15 +339,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_11
+      name: character_3
       rect:
         serializedVersion: 2
         x: 745
         y: 50
         width: 300
         height: 283
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -359,15 +359,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_0455_12
+      name: character_4
       rect:
         serializedVersion: 2
         x: 1083
         y: 53
         width: 302
         height: 285
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

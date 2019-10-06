@@ -7,12 +7,13 @@ public class Manager_UIgamepler : MonoBehaviour
 {
     // public List<Sprite> Character = new List<Sprite>();
     // public List <GameObject> p1 = new List<GameObject>();  
-
+    
      [System.Serializable]
         public class set_Skin{          //skin
         public Sprite skin_Cha;   //ตัว
         public Sprite skin_channel;   //ช่อง
     }
+    [Header("manager UIgamepler")]
     [Tooltip("Skin")] public List <set_Skin> series_Skin = new List <set_Skin>();
 
 
@@ -23,7 +24,7 @@ public class Manager_UIgamepler : MonoBehaviour
     }
     [Tooltip("player")]public List <set_Charater> series_Character = new List <set_Charater>();
 
-    public int player01,player02,player03,player04;
+    public int Playernumder,player01,player02,player03,player04;
 
     // public int setcha;
 
@@ -36,111 +37,115 @@ public class Manager_UIgamepler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    // void Update() {}
+    public void showCharacter(){
+        switch(Playernumder){
+            case 1 :
+                Debug.Log("p1 = "+ DataCharacter.Set_id[0]);
+                break;
+            case 2 :
+                Debug.Log("p1 = "+ DataCharacter.Set_id[0]);
+                Debug.Log("p2 = "+ DataCharacter.Set_id[1]);
+                break;
+            case 3 :
+                Debug.Log("p1 = "+ DataCharacter.Set_id[0]);
+                Debug.Log("p2 = "+ DataCharacter.Set_id[1]);
+                Debug.Log("p3 = "+ DataCharacter.Set_id[2]);
+                break;
+            case 4 :
+                Debug.Log("p1 = "+ DataCharacter.Set_id[0]);
+                Debug.Log("p2 = "+ DataCharacter.Set_id[1]);
+                Debug.Log("p3 = "+ DataCharacter.Set_id[2]);
+                Debug.Log("p4 = "+ DataCharacter.Set_id[3]);
+            break;
+
+        }
+
     }
+    
+
 
     public void settingUI(){
         switch(player01){        //player 1
             case 0 :
                 series_Character[0].Charater.sprite = series_Skin[0].skin_Cha;
                 series_Character[0].channel.sprite  = series_Skin[0].skin_channel;
-
-            break;
+             break;
 
             case 1 :
                 series_Character[0].Charater.sprite = series_Skin[1].skin_Cha;
-                series_Character[0].channel.sprite  = series_Skin[1].skin_channel;
-            
-            break;
+                series_Character[0].channel.sprite  = series_Skin[1].skin_channel;            
+                break;
             case 2 :
                 series_Character[0].Charater.sprite = series_Skin[2].skin_Cha;
-                series_Character[0].channel.sprite  = series_Skin[2].skin_channel;
-            
-            break;
+                series_Character[0].channel.sprite  = series_Skin[2].skin_channel;           
+                break;
 
             case 4 :
                 series_Character[0].Charater.sprite = series_Skin[3].skin_Cha;
                 series_Character[0].channel.sprite  = series_Skin[3].skin_channel;
-            
             break;
-        }
+            }
 
         switch(player02){        //player 2
             case 0 :
                 series_Character[1].Charater.sprite = series_Skin[0].skin_Cha;
                 series_Character[1].channel.sprite  = series_Skin[0].skin_channel;
-
-            break;
+                break;
 
             case 1 :
                 series_Character[1].Charater.sprite = series_Skin[1].skin_Cha;
                 series_Character[1].channel.sprite  = series_Skin[1].skin_channel;
-            
-            break;
+                break;
             case 2 :
                 series_Character[1].Charater.sprite = series_Skin[2].skin_Cha;
-                series_Character[1].channel.sprite  = series_Skin[2].skin_channel;
-            
-            break;
+                series_Character[1].channel.sprite  = series_Skin[2].skin_channel;           
+                break;
 
             case 4 :
                 series_Character[1].Charater.sprite = series_Skin[3].skin_Cha;
                 series_Character[1].channel.sprite  = series_Skin[3].skin_channel;
-            
-            break;
-        }
+                break;
+            }
          switch(player03){    //player 3
             case 0 :
                 series_Character[2].Charater.sprite = series_Skin[0].skin_Cha;
                 series_Character[2].channel.sprite  = series_Skin[0].skin_channel;
-
-            break;
+                break;
 
             case 1 :
                 series_Character[2].Charater.sprite = series_Skin[1].skin_Cha;
-                series_Character[2].channel.sprite  = series_Skin[1].skin_channel;
-            
-            break;
+                series_Character[2].channel.sprite  = series_Skin[1].skin_channel;           
+                break;
             case 2 :
                 series_Character[2].Charater.sprite = series_Skin[2].skin_Cha;
                 series_Character[2].channel.sprite  = series_Skin[2].skin_channel;
-            
-            break;
+                break;
 
             case 4 :
                 series_Character[2].Charater.sprite = series_Skin[3].skin_Cha;
                 series_Character[2].channel.sprite  = series_Skin[3].skin_channel;
-            
-            break;
-        }
+                break;
+            }
         switch(player04){    //player 4
             case 0 :
                 series_Character[3].Charater.sprite = series_Skin[0].skin_Cha;
                 series_Character[3].channel.sprite  = series_Skin[0].skin_channel;
-
-            break;
+                break;
 
             case 1 :
                 series_Character[3].Charater.sprite = series_Skin[1].skin_Cha;
                 series_Character[3].channel.sprite  = series_Skin[1].skin_channel;
-            
-            break;
+                break;
             case 2 :
                 series_Character[3].Charater.sprite = series_Skin[2].skin_Cha;
-                series_Character[3].channel.sprite  = series_Skin[2].skin_channel;
-            
-            break;
+                series_Character[3].channel.sprite  = series_Skin[2].skin_channel;           
+                break;
 
             case 4 :
                 series_Character[3].Charater.sprite = series_Skin[3].skin_Cha;
-                series_Character[3].channel.sprite  = series_Skin[3].skin_channel;
-            
-            break;
-        }
-
+                series_Character[3].channel.sprite  = series_Skin[3].skin_channel;            
+                break;
+            }
     }
-
-
 }

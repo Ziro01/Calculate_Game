@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/test/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Board Game/Scene/ChooseNumber_players..unity
+    guid: acd64d6c143e2c24b9f9f54fcd9bf7ea
+  - enabled: 1
+    path: Assets/Board Game/Scene/Choose_character.unity
+    guid: 539b3d1eb1dd0d44fbbf10710b89ec83
+  - enabled: 1
+    path: Assets/Board Game/Scene/boardGame.unity
+    guid: ef3ed254130a3c643b8a6adc4aabd2a6
+  - enabled: 1
+    path: Assets/Board Game/Scene/4Player.unity
+    guid: 271d6d2354e7cf34ca6e6d9538d696c1
   m_configObjects: {}
