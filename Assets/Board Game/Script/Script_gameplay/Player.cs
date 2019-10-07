@@ -7,25 +7,29 @@ public class Player : MonoBehaviour
 {
     [Header("manager player")]
         public MakePath framMakePath;
+        public Show_HP fromShowUI;
+        [Space(15)]
         [Tooltip(" enter ID player ,hp receive data  ")]public int ID_Player ,hp,setHP;
         [Tooltip(" point_n =>new Position ,point_i=>current Position  ")]
         public int point_n ,point_i ;
-        private int CountPonit,numberPlayer;   //num
+        private int CountPonit,numberPlayer;  
         [Tooltip(" playerRun =>rungame ,live => check live player ")]
         public bool playerRun ,live;
         private Rigidbody2D rb;
+        private SpriteRenderer cha;
     void Start()
     { 
-        rb = GetComponent<Rigidbody2D>();
+        cha = GetComponent<SpriteRenderer>();
+        rb  = GetComponent<Rigidbody2D>();
+
         hp = framMakePath.HP;
         setHP = hp;
         numberPlayer = DataCharacter.Set_id.Count;
-        Debug.Log("gameplay = "+numberPlayer);
-        
-        // live = true;
+
+        Check_life();
     }
     public void playGame(int _number)
-    { //Debug.Log("playerRun:"+ID_Player);
+    {
         if(hp >0)
         {
             CountPonit = _number;
@@ -35,7 +39,6 @@ public class Player : MonoBehaviour
             playerRun = false;
         }
     }
-    // void Update() {}
     private void FixedUpdate() 
     {  
         switch(playerRun)
@@ -44,11 +47,11 @@ public class Player : MonoBehaviour
                 run();
                 break;
         } 
-        Check_life();
     }
     public void reduce_life(int _reduce_life)
     {
         hp -= _reduce_life;
+        Check_life();
         if(hp <= 0)
         {
             Check_life();
@@ -66,19 +69,26 @@ public class Player : MonoBehaviour
 
     public void Check_life()
     {
-        if(hp >0)
+        if(hp <=0) 
         {
-            live = true;
+            live = false;
+            hp = 0;
+            fromShowUI.Show_numberHP(ID_Player,hp);
+            // framMakePath.delete_Token(ID_Player);  
+            GameColtoler.fromGameColtoler.check_numberPlayer();
+            cha.sprite = null;
         }
         else
         {
-            live = false;
+            live = true;
+            fromShowUI.Show_numberHP(ID_Player,hp);
         }
+        
     }
     public void run() 
     {
         if(transform.position != framMakePath.Checkbox[point_n].point_Box.position )  // != ให้เข้าหา
-        {  //Debug.Log("!= ให้เข้าหา");
+        {
             Vector2 poit = Vector2.MoveTowards(transform.position,framMakePath.Checkbox[point_n].point_Box.position,framMakePath.Space*Time.deltaTime);
             rb.MovePosition(poit);
         }
@@ -101,74 +111,51 @@ public class Player : MonoBehaviour
                 {
                     point_i = (point_n-1);
                 }
+
                 switch(numberPlayer)
                 {
                     case 2 :
                         if(point_i == 0 || point_i == 4)
                         {
                             GameColtoler.fromGameColtoler.pointVIP(ID_Player,point_i);
+                            RandomDice.fromRandomDice.rungame();
                         }
-                        else
+                        else if(live == true)
                         {
-                            testProgram(); 
+                            update_DataPoint(); 
+                            RandomDice.fromRandomDice.rungame();
                         }
                         break;
                     case 3 :
                         if(point_i == 0 || point_i == 4 || point_i == 8)
                         {
                             GameColtoler.fromGameColtoler.pointVIP(ID_Player,point_i);
+                            RandomDice.fromRandomDice.rungame();
                         }
-                        else
+                        else if(live == true)
                         {
-                            testProgram(); 
+                            update_DataPoint(); 
+                            RandomDice.fromRandomDice.rungame();
                         }
                         break;
-                    case 4 :
+                    case 4 : 
                         if(point_i == 0 || point_i == 4 || point_i == 8 || point_i == 12)
-                        {
+                        {  
                             GameColtoler.fromGameColtoler.pointVIP(ID_Player,point_i);
+                            RandomDice.fromRandomDice.rungame();
                         }
-                        else
-                        {
-                        testProgram(); 
+                        else if(live == true)
+                        { 
+                            update_DataPoint(); 
+                            RandomDice.fromRandomDice.rungame();
                         }
                         break;
                 }
-                
             }
         }
     }
-    public void testProgram()
+    public void update_DataPoint()
     {
-        Debug.Log("id ="+ID_Player +"point_i="+point_i);
         framMakePath.CheckData_Box(ID_Player,point_i);
     }
 }
-
-
-
-//******************************************************/
-// public void run() {
-    //     if(transform.position != framMakePath.point[Box_n].position )  // != ให้เข้าหา
-    //         {
-    //             // Vector2 poit = Vector2.MoveTowards(transform.position,point[n].position,Space*Time.deltaTime);
-    //             // rb.MovePosition(poit);
-    //             Vector2 poit = Vector2.MoveTowards(transform.position,framMakePath.point[Box_n].position,framMakePath.Space*Time.deltaTime);
-    //             rb.MovePosition(poit);
-    //         }
-    //     else
-    //         {   
-    //             Box_n = (Box_n + 1) % framMakePath.point.Length;   
-    //             if(num-1 > 0){         // นับจุดผ่าน
-    //                 num -= 1 ;
-    //                 int i ;
-    //                 i =+ 1;
-    //                 Debug.Log("i="+i);
-    //         }
-    //             else
-    //             {
-    //                 playerRun = false;
-    //                 num = numset;
-    //             }
-    //         }
-    //     }

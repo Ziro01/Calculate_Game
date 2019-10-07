@@ -43,8 +43,6 @@ public class managerCharacter : MonoBehaviour
    
     public void Check_numberOfPlayer(string _numberPlayer){    //Check_number Of Player
         _numberPlayer = managernumberplayer.numberPlayer;
-        Debug.Log("menu = 0"+_numberPlayer);
-
         switch(_numberPlayer){
             case"1_Player":
                 numberFoPlayer = 1;
@@ -72,16 +70,16 @@ public class managerCharacter : MonoBehaviour
             
             switch(countPlayer){
             case 0 : 
-                txt_playerSelect.text ="ผู้เล่นที่ 1 เลือกตัวละคร";
+                txt_playerSelect.text ="คิว ผู้เล่นที่ 1 เลือกตัวละคร";
                 break;
             case 1 :
-                txt_playerSelect.text ="ผู้เล่นที่ 2 เลือกตัวละคร";
+                txt_playerSelect.text ="คิว ผู้เล่นที่ 2 เลือกตัวละคร";
                 break;
             case 2 :
-                txt_playerSelect.text ="ผู้เล่นที่ 3 เลือกตัวละคร";
+                txt_playerSelect.text ="คิว ผู้เล่นที่ 3 เลือกตัวละคร";
                 break;
             case 3 :
-                txt_playerSelect.text ="ผู้เล่นที่ 4 เลือกตัวละคร";
+                txt_playerSelect.text ="คิว ผู้เล่นที่ 4 เลือกตัวละคร";
                 break;
                 }   
             }
@@ -106,7 +104,7 @@ public class managerCharacter : MonoBehaviour
                         btn_character_id1.color = Color.blue;
                     }
                     else{
-                        Debug.Log("log id="+id_character);
+                        // Debug.Log("log id="+id_character);
                     }
                 break;
 
@@ -118,7 +116,7 @@ public class managerCharacter : MonoBehaviour
                         btn_character_id2.color = Color.yellow;
                     }
                     else{
-                        Debug.Log("log id="+id_character);
+                        // Debug.Log("log id="+id_character);
                     }
                 break;
 
@@ -130,7 +128,7 @@ public class managerCharacter : MonoBehaviour
                         btn_character_id3.color = Color.red;
                     }
                     else{
-                        Debug.Log("log id="+id_character);
+                        // Debug.Log("log id="+id_character);
                     }
                 break;
 
@@ -142,7 +140,7 @@ public class managerCharacter : MonoBehaviour
                         btn_character_id4.color = Color.green;
                     }
                     else{
-                        Debug.Log("log id="+id_character);
+                        // Debug.Log("log id="+id_character);
                     }
                 break;
         
@@ -150,9 +148,7 @@ public class managerCharacter : MonoBehaviour
             }    
         }
         else{
-            Debug.Log("go to scen game play");
             for(int i=0;i < Set_id.Count;i++){
-                Debug.Log("play"+i+"="+Set_id[i]);
             }
 
             SceneManager.LoadScene("4Player");    
